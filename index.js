@@ -31,4 +31,14 @@ app.get("/products", (req, res) => {
     }
   });
 });
+app.get("/products/:id", (req, res) => {
+    const {id}=req.params
+    query.execute(`select *from products where id=${id}`, (err, data) => {
+      if (err) {
+        res.json({ message: err ,err} );
+      } else {
+        res.json({ message: "Success",data } );
+      }
+    });
+  });
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
