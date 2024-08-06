@@ -12,7 +12,13 @@ const query= mysql.createConnection({
 })
 app.use(express.json())
 
+app.post('/addproduct',(req,res)=>{
+    const {name,price,desc}=req.body
+    query.execute    
+     (`insert into products(name,price,description) values('${name}','${price}','${desc}')`)
 
+    res.json({message: 'Success'})
+})
 
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
