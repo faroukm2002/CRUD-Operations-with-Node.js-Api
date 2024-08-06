@@ -41,4 +41,12 @@ app.get("/products/:id", (req, res) => {
       }
     });
   });
+
+
+  app.delete("/products", (req, res) => {
+    const {id}=req.body
+    query.execute(`delete from products where id=${id}`)
+   
+        res.json({ message: "Success"} );
+  });
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
