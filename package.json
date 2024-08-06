@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/faroukm2002/CRUD-Operations-with-Node.js-Api#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.19.2",
     "mysql2": "^3.11.0"
   }

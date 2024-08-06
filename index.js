@@ -49,4 +49,13 @@ app.get("/products/:id", (req, res) => {
    
         res.json({ message: "Success"} );
   });
+
+  app.put("/products", (req, res) => {
+    const { name, price, desc ,id} = req.body;
+    query.execute
+    (`update  products set name ='${name}',price ='${price}',description ='${desc}' where id=${id}`)
+
+    res.json({ message: "Success" });
+  });
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
+ 
