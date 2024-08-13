@@ -1,16 +1,11 @@
-const express = require("express");
-const app = express();
+ import express from 'express';
+ import { query } from './database/dbConnection.js'
+ import cors from 'cors';
+
+ const app = express();
 const port = 3000;
-const cors=require("cors");
-// npm i mysql2
-const mysql = require("mysql2");
-const query = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "",
-  database: "shopping",
-  port: "3308",
-});
+
+
 app.use(express.json());
 app.use(cors());
 app.post("/products", (req, res) => {
